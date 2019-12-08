@@ -1,5 +1,7 @@
 **REVISION 1.0** <br>
-**unlinked proposals from dropbox**
+**unlinked proposals from dropbox** <br>
+
+production link: https://vpartner.herokuapp.com <br>
 
 demo Vertiv Smartrow+, configure a proposal for all-in-one data center infrastructure. <br>
 steps are minimized as users are not familar with infrastructure design, simplification of configuration steps are important. <br>
