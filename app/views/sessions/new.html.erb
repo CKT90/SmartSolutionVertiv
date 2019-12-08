@@ -1,0 +1,40 @@
+<% provide(:title, 'Log in') %>
+
+	<div class="login_here container">
+	
+	<div class="col-lg-offset-4 col-lg-4 col-xs-12">
+
+
+		<p class="loginvertiv">VERTIV</p>
+		<p class="loginsmartrow">SMARTROW+</p>
+
+		<br>
+
+
+		<h1>Log In</h1>
+			<div class="row">
+				
+
+				<%= form_for(:session, url: login_path) do |f| %>
+
+					<%= f.label :email %>
+					<%= f.email_field :email, class: 'form-control' %>
+					
+					<%= f.label :password %>
+					<%= f.password_field :password, class: 'form-control' %>
+
+				
+					<%= f.label :remember_me, class: "checkbox inline" do %>
+					<%= f.check_box :remember_me %> <!-- checkbox result is 1 or 0 -->
+					<span>Remember me on this device</span>
+					<% end %>
+
+						<%= f.submit "log in", class: "btn btn-primary" %>
+
+				<% end %>	
+
+			</div>
+
+		</div>
+
+	</div>

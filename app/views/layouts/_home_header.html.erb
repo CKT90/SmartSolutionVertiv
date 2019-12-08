@@ -1,0 +1,39 @@
+    <header class="head home_header">
+      <a href="#" class="header_icon"></a>
+			<%= link_to image_tag("logo1.png", alt: "tea the everything apparel tee"), root_path, id: "logo1"%>
+			<%= link_to "Vertiv Smartrow+", root_path, id: "logo" %>
+
+ 
+
+      	<nav class="menu">
+
+			<%= link_to "Overview", root_path, class: "underline" %>
+			<%= link_to "Configure", configure_url, class: "underline"  %>
+			<%= link_to "Contact Us", help_path, class: "underline"  %>
+			<%= link_to "Brochure", "https://www.vertivco.com/globalassets/products/facilities-enclosures-and-racks/integrated-solutions/smartrow-plus-brochure.pdf", class: "underline"  %>
+			
+			
+			<div class = "right-side">
+			<% if logged_in? %>
+				<div class="dropdown">
+					<a href="#" class="dropbtn disable_link">Welcome, <%= current_user.name %>! &nbsp; <span class="caret"></span></a>
+					<div class="dropdown-content">
+						<%= link_to "My Config", configlist_url, class: "disable_link" %>
+						<%= link_to "Reset PW", edit_user_path(id: current_user.id), class: "disable_link" %>
+						<%= link_to "Log out", logout_path, method: "delete", class: "disable_link" %>
+					</div>
+				</div>
+			<% else %>
+				<%= link_to "Log in", login_path, class: "ghost-button-transition login_button" %>
+			<% end %>
+			</div>	
+		</nav>
+
+
+	</header>
+
+
+	<div class="home_site">
+
+
+

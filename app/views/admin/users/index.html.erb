@@ -1,0 +1,49 @@
+<div class="admin_product">
+<h1>All Users</h1>
+
+
+<table class="table product_table">
+  <thead class="thead-inverse">
+    <tr>
+      <th style="width: 25%;">Name</th>
+      <th style="width: 20%;">Email</th>
+      <th style="width: 10%; text-decoration: underline;"><%= sort_link @search, :created_at, "Date Created" %></th>
+      <th style="width: 10%; text-decoration: underline;"><%= sort_link @search, :company, "Company" %></th>
+      <th style="width: 15%;">Status</th>
+      <th style="width: 15%;">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= will_paginate %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, edit_admin_user_path(user) %> <br> <%= user.status %></td> 
+        <td><%= user.email %></td> 
+        <td><%= user.created_at.strftime('%a, %d %b %Y %H:%M:%S') %></td>
+        <td></td>
+        <td>
+          <% if user.admin == true %>
+            <span>Admin</span>
+          <% else %>
+            <span>Normal User</span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to 'Edit User', edit_admin_user_path(user), class: 'btn btn-success' %>
+        </td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+
+</table>
+<%= will_paginate %>
+</div>
+<br>
+
+
+
+<%= link_to 'New User', new_admin_user_path, class: 'btn btn-success btn-product new_product_button' %>
+
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: MyString
+  rack_q: 1
+  comment: MyText
+
+two:
+  project: MyString
+  rack_q: 1
+  comment: MyText

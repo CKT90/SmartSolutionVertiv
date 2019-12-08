@@ -1,0 +1,46 @@
+<% provide(:title, 'Configure') %>
+
+	
+	<div class="config container">
+		<div class="col-lg-6 col-lg-offset-3">
+
+				<p class="loginvertiv">VERTIV</p>
+				<p class="loginsmartrow">SMARTROW+ <br>Proposal<br>Configurator</p>
+				<br>
+				<br>
+			
+			<%= render "shared/error_messages", :target => @config %>
+
+				<%= form_for @config, url: configure_path do |f| %> 
+					<%= f.label :project, "Project Name" %>
+					<br>
+					<span class="configdesc">*Please indicate project location to accomodate delivery and installation cost (example: Jabatan ABC, KL)</span>
+					<br>
+					<%= f.text_field :project, class: 'form-control' %>
+
+
+					<%= f.label :rack_q, "Rack Quantity" %>
+					<br>
+					<span class="configdesc">*Number of usable racks needed by end-user</span>
+					<br>
+					<%= select_tag "config[rack_q]", options_for_select([ "1", "2", "3", "4", "5", "6" ], "1"), class: 'form-control' %>
+					<br>
+					<br>
+					<%= f.label :comment, "Comment (Optional)" %>
+					<br>
+					<span class="configdesc">*Additional information such as:
+					<br>
+					600mm or 800mm racks needed in the Smartrow+.
+					<br>
+					Piping length in feet or meters
+					<br>
+					Other additional requirements (KVM/IT) </span>
+					<br>
+					<%= f.text_area :comment, class: 'form-control' %>
+
+
+					<%= f.submit "Create my proposal", class: "ghost-button-transition-config" %>
+				<% end %>
+			</div>
+	</div>
+

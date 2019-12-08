@@ -1,0 +1,83 @@
+<% provide(:title, 'Smartrow+') %>
+
+
+<div class="container config_result">
+
+	<div class="col-lg-12">
+		<div class="col-lg-6 config_img">
+			<%= image_tag("sr27.png", alt: "vertiv smartrow", id: "cfg_img") %>
+			<h4><i class="glyphicon glyphicon-flash"></i> 2 x 20kVA UPS</h3>
+			<h4><i class="glyphicon glyphicon-tint"></i> 2 x 18kW precision cooling system</h3>
+			<h4><i class="glyphicon glyphicon-list-alt"></i> 2 x iPDU, for dual input or single corded equipment</h3>
+		</div>
+		<div class="col-lg-6 config_des">
+			<span class="nihon">Tier 2 System</span><p style="font-size: 0.5em;"> *With redundancy</p>
+
+			<table class="table" style="font-size: 20px; margin-top: 40px;">
+			  <thead class="thead-inverse">
+			    <tr>
+			      <th style="width:50%;">Properties</th>
+			      <th style="width:50%;">Attribute</th>
+			    </tr>
+			  </thead>
+
+			  <tbody class="border_grey">
+			      <tr>
+			        <td>Dimension (mm) <br> (W x H x D)</td>
+			        <td>5200 x 2000 x 1400</td>
+			      </tr>
+			      <tr>
+			        <td>Cooling (kW) <br> net sensible</td>
+			        <td>18 (max) +redundancy</td>
+			      </tr>
+			      <tr>
+			        <td>UPS (kW)</td>
+			        <td>20 (max) +redundancy</td>
+			      </tr>			  
+			      <tr>
+			        <td>Usable Racks (42U)</td>
+			        <td>5 units</td>
+			      </tr>	
+			      <tr>
+			        <td>Incoming Power Input</td>
+			        <td>3-phase 125A x 1</td>
+			      </tr>	
+			      <tr>
+			        <td>UPS Backup Time</td>
+			        <td>15 minutes</td>
+			      </tr>
+			        <td>Budgetary Price</td>
+			        <td>
+			        	Normal Indicative Price: RM960,900 <br>
+			        <% if current_user.status == "Silver NSP" %>
+			        	RM912,000 <span style="color: red;">(5% discount)</span>
+			        <% elsif current_user.status == "Gold NSP" %>
+			        	RM866,400 <span style="color: red;">(10% discount)</span>	
+			        <% elsif current_user.status == "Platinum NSP" %>
+			        	RM823,000<span style="color: red;">(15% discount)</span>	
+			        <% else current_user.status = "none" %>
+			        <% end %>	
+			       	</td>
+			  </tbody>
+
+			</table>
+
+
+
+			<h4> *No raised floor needed. </h4>
+			<h4> *1-2 weeks installation. </h4>
+
+
+
+			<h2>
+				Proposal download link:
+			</h2>
+	<%= link_to "CLICK HERE", "https://www.dropbox.com/s/crr687eyvvu04kf/017%20Proposal%20for%202%2B7%20%2815%20minutes%29.docx?dl=0", class: "ghost-button-transition-result"  %>
+			
+		</div>
+	</div>
+
+</div>
+
+
+

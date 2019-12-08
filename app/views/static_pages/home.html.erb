@@ -1,0 +1,126 @@
+<div class="home">
+<% provide(:title, "Home")%>
+<div class="image_switch">
+<div id="carousel-change" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-change" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-change" data-slide-to="1"></li>
+    <li data-target="#carousel-change" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active item_1">
+      <a href="#"></a>
+      <div class="carousel-caption d1">
+
+      <span class="des11">SmartRow Plus </span><br>
+      <span class="des12"> SmartRow™ Plus is a fully-integrated data center infrastructure solution equipped with power, thermal management and infrastructure management and monitoring solution from Vertiv.  </span>
+      <span class="des13"> <br><%= link_to "Configure!", configure_url, class: 'ghost-button-transition' %></span>
+
+        </div>
+    </div>
+  
+</div>
+<div class="container">
+<div class="col-lg-6 col-xs-12">
+  <%= image_tag "smartrow.jpg", class: "allin" %>
+</div>
+
+<div class="col-lg-6 col-xs-12">
+  <%= image_tag "words.jpg", class: "allin" %>
+</div>
+</div>
+
+</div>
+<div style="background-color: #454544; padding-bottom: 50px;">
+<div class="container">
+<div class="col-lg-6 col-xs-12">
+  <%= image_tag "feature1.jpg", class: "allin" %>
+</div>
+
+<div class="col-lg-6 col-xs-12">
+  <%= image_tag "feature2.jpg", class: "allin" %>
+</div>
+</div>
+</div>
+
+
+<div style="background-color: #f3d78d; padding-bottom: 50px;">
+<div class="container">
+<div class="col-lg-6 col-xs-12">
+  <%= image_tag "unique1.jpg", class: "allin" %>
+</div>
+
+<div class="col-lg-6 col-xs-12">
+  <%= image_tag "unique2.jpg", class: "allin" %>
+</div>
+</div>
+</div>
+
+ 
+<div class="casestudy">
+<br>
+  <h1>CASE STUDY</h1>
+    <div class="col-lg-12 col-xs-12 cscontent">
+      <h2>Background</h2>
+
+      <p>Syarikat Air Darul Aman (SADA) Sdn. Bhd. ensures the delivery of clean, quality water to the residents of Kedah in Malaysia. It is a wholly-owned subsidiary of Kedah Darul Aman and is the successor to the Kedah Water Supply Department, which was incorporated on January 1, 2010. SADA’s mission is to provide clean water, abiding by the standards set by the World Health Organization.</p>
+
+      <h2>Success Factor</h2><span class="cslink"><a href="https://www.vertivco.com/globalassets/documents/case-studies/vertiv-syarikat-air-darul-aman-cs-en-my_192252_0.pdf">Read Full Story Here</a></span><br><br>
+      <p>SADA wanted to build a new data centre which will be housed in its new building in Alor Setar. However, the data centre room was not very spacious, thus the customer needed a solution with a small footprint but powerful to support its IT requirements throughout the region. In addition, SADA wanted an infrastructure with a low total cost of ownership and high energy savings, without compromising on efficiency and availability.</p>
+
+      <p>“We were looking for a solution that can be quickly deployed so our business operations would not be hampered,” said Muahamad Fauzi B. Haji Romli, ICT Technician of SADA. “Speed, flexibility and efficiency are the main considerations in going for an integrated approach to our critical infrastructure.”</p>
+
+    </div>
+
+    <div>
+      <div class="col-lg-6 col-xs-12">
+        <div class="embed-responsive embed-responsive-4by3" >
+         <iframe src="//player.vimeo.com/video/236375025?title=0&byline=0&portrait=0" allowfullscreen="" width="450" height="315"></iframe>
+        </div> 
+      </div>
+
+      <div class="col-lg-offset-1 col-lg-5 col-xs-12">
+          <%= image_tag "cssite.jpg", class: "csimg" %>
+      </div>
+    </div>
+</div>
+
+<div class="monitor">
+
+  <p> Schedule a Smartrow+ demo session with Vertiv. </p>
+  <br>
+  <span class="monitorp"> Vertiv Office, Kelana Jaya </span>
+  <br>
+  <br>
+  <span class="monitorp"> SADA, Kedah (customer production site, North Peninsula)</span>
+
+</div>
+
+
+
+
+  <script type="text/javascript">
+  var windowWidth = $(document).width();
+  var os = $('.image_switch').offset().top; 
+  var h = 200;
+  var $w = $(window).scroll(function() {
+
+
+      if($w.scrollTop() > os +  h){
+        $('.head.home_header').removeClass('home_header');
+        $('.head').addClass('header');  
+        $('a.login_button').removeClass('ghost-button-transition'); 
+        console.log(os);
+      }
+      else {   
+        $('.head.header').removeClass('header');
+        $('.head').addClass('home_header'); 
+        $('a.login_button').addClass('ghost-button-transition');
+      }
+    
+  });
+  </script>
+  </div>

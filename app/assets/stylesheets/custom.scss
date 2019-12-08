@@ -1,0 +1,167 @@
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.gravatar {
+	float: left;
+	margin-right: 10px;
+} 
+
+.gravatar_edit {
+	margin-top: 15px;
+}
+
+/* forms */
+input, textarea, select, .uneditable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	margin-bottom: 15px;
+	@include box_sizing;
+}
+
+input {
+	height: auto !important;
+}
+
+#error_explanation {
+	color: red;
+		ul {
+		color: #fff;
+		background-color: #ff8d76;
+		list-style-type: none;
+		margin: 0 0 30px 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-radius: 10px;
+	}
+}
+
+
+.field_with_errors {
+	@extend .has-error;
+	.form-control {
+	color: $state-danger-text;
+	}
+}
+
+.checkbox {
+	margin-top: -10px;
+	margin-bottom: 10px;
+	span {
+		margin-left: 20px;
+		font-weight: normal;
+	}
+}
+
+#user_admin,
+#option_type_color,
+#session_remember_me {
+	width: auto;
+	margin-left: 0;
+}
+
+
+#optiontype {
+	overflow: hidden;
+}
+
+.option_value_form {
+	list-style-type: none;
+	clear:both;
+
+	li {
+    	float: left;
+	}
+
+}
+
+#option_values {
+	padding-left: 0px;
+}
+
+.bar {
+    height: 20px;
+    background: green;
+}
+
+
+
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+
+
+        #flash_message {
+          text-align: center;
+          background: #ffe;
+          width:100%;
+          margin-left:auto;
+          margin-right:auto;
+          border:1px solid gray;
+          margin:0px;
+}
+
+#logo1 {
+	float:left;
+	margin-left:20px;
+	line-height: 40px;
+}
+
+#logo1 img{
+	height: 40px;
+}
+
+
+a {
+	outline: 0 !important;
+}
+
+.home_header {
+	#logo1 img {
+		position: relative !important;
+		line-height: 50px;
+		bottom: 1px !important;
+	}
+
+	#logo {
+		position: relative !important;
+		bottom: 3px !important;
+	}
+}
+
+@media only screen and (max-width: 1025px) {
+	.home_header {
+		#logo1 img {
+			position: relative !important;
+			bottom: 1px !important;
+			line-height: 40px;
+		}
+	}
+
+	#logo {
+		position: relative !important;
+		top: 1px !important;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#logo1 {
+		margin-left:0px;
+	}
+}

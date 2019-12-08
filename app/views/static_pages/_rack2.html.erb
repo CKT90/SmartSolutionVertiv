@@ -1,0 +1,153 @@
+<% provide(:title, 'Smartrow+') %>
+
+
+<div class="container config_result">
+
+	<div class="col-lg-12">
+		<div class="col-lg-6 config_img">
+			<%= image_tag("sr13.png", alt: "vertiv smartrow", id: "cfg_img") %>
+
+			<h4><i class="glyphicon glyphicon-flash"></i> 1 x 20kVA UPS</h3>
+			<h4><i class="glyphicon glyphicon-tint"></i> 1 x 18kW precision cooling system</h3>
+			<h4><i class="glyphicon glyphicon-list-alt"></i> 1 x iPDU, for dual input or single corded equipment</h3>
+		</div>
+		<div class="col-lg-6 config_des">
+			<span class="nihon">Tier 1 System</span><br> <p style="font-size: 0.5em;" > *Without redundancy</p>
+
+
+			<table class="table" style="font-size: 20px; margin-top: 40px;">
+			  <thead class="thead-inverse">
+			    <tr>
+			      <th style="width:50%;">Properties</th>
+			      <th style="width:50%;">Attribute</th>
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			      <tr>
+			        <td>Dimension (mm) <br> (W x H x D)</td>
+			        <td>2300 x 2000 x 1400</td>
+			      </tr>
+			      <tr>
+			        <td>Cooling (kW) <br> net sensible</td>
+			        <td>18 (max)</td>
+			      </tr>
+			      <tr>
+			        <td>UPS (kW)</td>
+			        <td>20 (max)</td>
+			      </tr>			  
+			      <tr>
+			        <td>Usable Racks (42U)</td>
+			        <td>2 units</td>
+			      </tr>	
+			      <tr>
+			        <td>Incoming Power Input</td>
+			        <td>3-phase 125A x 1</td>
+			      </tr>	
+			      <tr>
+			        <td>UPS Backup Time</td>
+			        <td>15 minutes</td>
+			      </tr>
+			        <td>Budgetary Price</td>
+			        <td>
+			        	Normal Indicative Price: RM567,000 <br>
+			        <% if current_user.status == "Silver NSP" %>
+			        	RM538,600 <span style="color: red;">(5% discount)</span>
+			        <% elsif current_user.status == "Gold NSP" %>
+			        	RM511,600 <span style="color: red;">(10% discount)</span>	
+			        <% elsif current_user.status == "Platinum NSP" %>
+			        	RM486,000<span style="color: red;">(15% discount)</span>	
+			        <% else current_user.status = "none" %>
+			        <% end %>	
+			       	</td>
+			  </tbody>
+
+			</table>
+
+			<h4> *No raised floor needed. </h4>
+			<h4> *1-2 weeks installation. </h4>
+
+			<h2>
+				Proposal download link:
+			</h2>
+				<%= link_to "CLICK HERE", "https://www.dropbox.com/s/6jdinpaz63rz5nj/003%20Proposal%20for%201%2B3%20%2815%20minutes%29.docx?dl=0", class: "ghost-button-transition-result"  %>
+			
+		</div>
+	</div>
+
+	<div class="col-lg-12 second_config">
+		<div class="col-lg-6 config_img">
+			<%= image_tag("sr24.png", alt: "vertiv smartrow", id: "cfg_img") %>
+			<h4><i class="glyphicon glyphicon-flash"></i> 2 x 20kVA UPS</h3>
+			<h4><i class="glyphicon glyphicon-tint"></i> 2 x 18kW precision cooling system</h3>
+			<h4><i class="glyphicon glyphicon-list-alt"></i> 2 x iPDU, for dual input or single corded equipment</h3>
+		</div>
+		<div class="col-lg-6 config_des">
+			<span class="nihon">Tier 2 System</span><p style="font-size: 0.5em;"> *With redundancy</p>
+
+			<table class="table" style="font-size: 20px; margin-top: 40px;">
+			  <thead class="thead-inverse">
+			    <tr>
+			      <th style="width:50%;">Properties</th>
+			      <th style="width:50%;">Attribute</th>
+			    </tr>
+			  </thead>
+
+			  <tbody class="border_grey">
+			      <tr>
+			        <td>Dimension (mm) <br> (W x H x D)</td>
+			        <td>2600 x 2000 x 1400</td>
+			      </tr>
+			      <tr>
+			        <td>Cooling (kW) <br> net sensible</td>
+			        <td>18 (max) +redundancy</td>
+			      </tr>
+			      <tr>
+			        <td>UPS (kW)</td>
+			        <td>20 (max) +redundancy</td>
+			      </tr>			  
+			      <tr>
+			        <td>Usable Racks (42U)</td>
+			        <td>2 units</td>
+			      </tr>	
+			      <tr>
+			        <td>Incoming Power Input</td>
+			        <td>3-phase 125A x 1</td>
+			      </tr>	
+			      <tr>
+			        <td>UPS Backup Time</td>
+			        <td>15 minutes</td>
+			      </tr>
+			        <td>Budgetary Price</td>
+			        <td>
+			        	Normal Indicative Price: RM813,100 <br>
+			        <% if current_user.status == "Silver NSP" %>
+			        	RM772,400 <span style="color: red;">(5% discount)</span>
+			        <% elsif current_user.status == "Gold NSP" %>
+			        	RM733,700 <span style="color: red;">(10% discount)</span>	
+			        <% elsif current_user.status == "Platinum NSP" %>
+			        	RM697,000<span style="color: red;">(15% discount)</span>	
+			        <% else current_user.status = "none" %>
+			        	
+			        <% end %>	
+			       	</td>
+			  </tbody>
+
+			</table>
+
+
+
+			<h4> *No raised floor needed. </h4>
+			<h4> *1-2 weeks installation. </h4>
+
+
+
+			<h2>
+				Proposal download link:
+			</h2>
+			<%= link_to "CLICK HERE", "https://www.dropbox.com/s/nf8wc1yblcgv82r/011%20Proposal%20for%202%2B4%20%2815%20minutes%29.docx?dl=0", class: "ghost-button-transition-result"  %>
+			
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<%= render "shared/error_messages", :target => @variant %>
+<p>
+  <strong>SKU:</strong>
+  <%= @variant.SKU %>
+</p>
+
+<%if @variant.images.any? %>
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag @variant.images.first.image_url(:thumb) %>
+</p>
+
+<% else %>
+  <p></p>
+ <%end%>
+
+<li><%= @variant.count_on_hand.to_s %></li>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@variant.price, unit: "RM") %>
+</p>
+
+
+
+<%= link_to "edit", edit_admin_product_variant_path( @product, @variant) %>
+
+
+
+<% if false %>
+<%= link_to "delete(commented)", [:admin, @product, @variant], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

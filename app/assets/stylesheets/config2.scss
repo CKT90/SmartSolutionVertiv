@@ -1,0 +1,237 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.select2-selection {
+
+	&:active,
+	&:focus,
+	&:hover {
+		outline: 0;
+	}
+
+}
+
+a.order_inquiry {
+	font-size:1em !important;
+	padding: 3px 6px 3px 6px;
+	position: relative;
+	bottom:3px;
+}
+
+.order_form {
+	padding-top: 30px;
+	padding-bottom: 100px;
+	position: relative !important;
+
+
+	p,
+	label {
+		font-weight: normal;
+	}
+
+	input {
+		border-radius: 5px;
+		padding-left: 5px;
+	}
+
+	textarea {
+		border-radius: 5px;
+		padding-left: 5px;
+	}
+
+	.order_item_price {
+
+		span.grand_total {
+			font-size: 15px;
+		}
+		
+		span {
+		float: right;
+		clear: both;
+		padding-right: 10px;
+
+		}
+	}
+
+}
+
+p.order_title {
+	border-bottom: 1px solid #979797;
+
+}
+
+.order_cart {
+	color: #666666;
+	box-shadow: 0 0.5px 4px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	background-color: #fff;
+
+
+	p.cart_title {
+		color: #fff;
+		margin:0;
+		padding: 5px;
+		background-color: #6ac5c8;
+	}
+
+	span.item_title {
+		font-size: 15px;
+		a {
+			text-decoration: underline;
+			&:active,
+			&:hover {
+				color:#1e98b2;
+			}
+		}
+	}
+
+	.option_types_cart {
+		border: 0px;
+
+		ul li {
+			font-size: 15px;
+			line-height: 18px;
+			font-family: serif;
+		}
+	}	
+
+	.grand_total {
+		font-weight: bold;
+	}
+
+	.table {
+		margin:0px;
+	}
+
+	.order_quantity {
+		font-size: 15px;
+		font-family: serif;
+	}
+}
+
+
+
+div.field_with_errors {
+  display: inline;
+}
+
+.submit_button {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #000;
+  border: 2px solid #000;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out,
+              color 0.2s ease-out;
+}
+.submit_button:hover,
+.submit_button:active {
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s ease-in,
+              color 0.3s ease-in;
+}
+
+.order_images img {
+
+	height: 110px;
+	width: 110px;
+	border: 1px solid #cad0cf;
+}
+
+
+tr.total_order {
+	border-collapse: separate;
+	border-radius:10px;
+	font-weight: bold;
+
+}
+
+
+@media only screen and (max-width: 745px) {
+
+	p.order_title {
+		margin-top:30px;
+
+	}
+}
+
+
+@media only screen and (max-width: 470px) {
+
+p.empty_order {
+	font-size: 12px;
+}
+
+.order_images img {
+
+	height: 100px;
+	width: 100px;
+	border-radius: 4px;
+}
+
+.order_cart {
+	font-size: 18px;
+
+
+	p.cart_title {
+		margin:0;
+	}
+
+	span.item_title {
+		margin-top: 5px;
+
+		a {
+			font-size: 16px;
+			&:hover {
+				color:#1e98b2 !important;
+			}
+		}
+	}
+
+	.option_types_cart {
+		border: 0px;
+		line-height: 12px;
+		margin-bottom: 5px;
+		ul li {
+			font-size: 14px;
+		}
+	}	
+
+	.grand_total {
+		font-weight: bold;
+	}
+
+	.table {
+		margin:0px;
+	}
+
+	.order_item_price {
+		padding: 5px;
+
+		span {
+		font-size:16px;
+		}
+
+		span.grand_total {
+			font-size: 13px;
+		}
+		span.order_quantity {
+			font-size: 13px;
+		}
+	}
+
+	td.grand_total {
+		font-size: 10px !important;
+	}
+
+	td.grand_number {
+		font-size: 16px;
+	}
+}
+}

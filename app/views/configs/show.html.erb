@@ -1,0 +1,28 @@
+<div class="user_config">
+
+<div class="container config_details">
+
+
+<h1> <span style="font-size: 0.5em; color: #566573; font-weight: bold;"> Proposal Number </span>  <br> <%= @config.number %> </h1> 
+<h1> <span style="font-size: 0.5em; color: #566573; font-weight: bold;"> Project Name </span> <br> <%= @config.project %> </h1> 
+
+</div>
+	
+	<%if @config.rack_q == 1 %>
+		<%= render "static_pages/rack1" %>
+	<% elsif @config.rack_q == 2 %>
+		<%= render "static_pages/rack2" %>
+	<% elsif @config.rack_q == 3 %>
+		<%= render "static_pages/rack3" %>
+	<% elsif @config.rack_q == 4 %>
+		<%= render "static_pages/rack4" %>	
+	<% elsif @config.rack_q == 5 %>
+		<%= render "static_pages/rack5" %>
+	<% elsif @config.rack_q == 6 %>
+		<%= render "static_pages/rack6" %>
+	<% end %>
+
+
+</div>		
+
+

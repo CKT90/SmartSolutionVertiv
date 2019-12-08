@@ -1,0 +1,31 @@
+
+
+<div class="admin-nav">
+
+	<div class="admin-nav-button">
+			<span class="menu-toggle"><i class="fa fa-bars"></i></span>
+	</div>
+
+	<div class="admin-nav-title">
+		<%= link_to "Administration Site", admin_configs_path %>
+	</div>
+
+	<div class="admin-user" style="float: right; margin-right:45px;">
+		<span style="margin-right: 10px;"> Hi, <%=current_user.name %>! </span>
+		<span> <%= link_to "Go To Configurator", configure_url, class: "btn btn-success", style: "margin-bottom: 5px;" %></span>
+	</div>
+
+
+
+</div>
+
+<div id="wrapper">
+<nav class="navbar sidebar" role="navigation">
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav nav-stacked">
+			<li><%= link_to "Configuration List", admin_configs_path %></li>
+			<li><%= link_to "User List", admin_users_path %></li>
+			<li><%= link_to "New User", new_admin_user_path %></li>
+		</ul>
+	</div>
+</nav>

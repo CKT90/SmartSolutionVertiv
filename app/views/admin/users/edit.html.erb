@@ -1,0 +1,85 @@
+<% provide(:title, "Edit user") %>
+
+<h1>User Profile: <%= @user.name %></h1>
+
+<% if @user.superuser == true %>
+ <% if current_user.superuser == true %>
+
+
+	<div class="col-lg-6">
+	<%= form_for [:admin, @user] do |f| %>
+
+		<%= render "shared/error_messages", :target => @user %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+
+		<%= f.label :company %>
+		<%= f.text_field :company, class: 'form-control' %>
+
+		<%= f.label :email %>
+		<%= f.text_field :email, class: 'form-control' %>
+
+      	<%= f.label :admin, class: "checkbox inline" do %>
+      	<%= f.check_box :admin %>
+      	<span>Admin</span>
+
+		<%= f.submit "Save changes", class: "btn btn-primary", style: 'width: 50%; float:right;' %>
+	<% end %>
+	</div>
+
+<% end %>
+
+	<% else %>
+
+	<% end %>
+
+	<% else %>
+	<div class="col-lg-6">
+	<%= form_for [:admin, @user] do |f| %>
+
+		<%= render "shared/error_messages", :target => @user %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+
+		<%= f.label :company %>
+		<%= f.text_field :company, class: 'form-control' %>
+
+		<%= f.label :email %>
+		<%= f.text_field :email, class: 'form-control' %>
+
+      	<%= f.label :admin, class: "checkbox inline" do %>
+      	<%= f.check_box :admin %>
+      	<span>Admin</span>
+
+		<%= f.submit "Save changes", class: "btn btn-primary", style: 'width: 50%; float:right;' %>
+	<% end %>
+	</div>
+	<%end%>
+	<%end%>
+
+
+<div class="col-lg-6">
+	<table class="table order_table">
+	  <thead class="thead-inverse">
+	    <tr>
+	      <th style="width: 25%; text-decoration: underline;"><%= sort_link @search, :created_at, "Date Created" %></th>
+	      <th style="width: 25%;"> Config No.</th>
+	      <th style="width: 15%;"> Project Name</th>
+
+	    </tr>
+	  </thead>
+
+  <tbody>
+    <% @configs.each do |config| %>
+      <tr>
+      	<td><%= config.created_at.strftime('%a, %d %b %Y %H:%M:%S') %></td>
+        <td style="color:#1e98b2;"><%= config.number %></td> 
+        <td class="total_cell"><%= config.project %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+</div>

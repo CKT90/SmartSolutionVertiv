@@ -1,0 +1,154 @@
+
+<div class="manage_order">
+
+	<p class="order_no"><span>Order No : </span ><span style="color: #1e98b2; margin: 0px;"> <%= @order.number %></span><br><span>Contact &nbsp; : <%= @order.contact_number %></span></p>
+    <div class="order_details">
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th style="width: 15%">Name</th>
+            <th style="width: 35%">Address</th>
+            <th style="width: 20%">Email</th>
+            <th style="width: 15%">Pay Type</th>
+            <th style="width: 15%">User Details</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= @order.name %></td>
+            <td><%= @order.address %></td>
+            <td><%= @order.email %></td>
+            <td><%= @order.pay_type %></td>
+            <% if @user.nil? %>
+              <td> GUEST SALES </td>
+            <% else %>
+              <td style="color:#1e98b2;"><%= link_to @user.name, edit_admin_user_path(@user) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+		<div class="row">
+  		<div class="col-md-6">
+        <table class="table">
+          <thead class="thead-inverse">
+            <tr>
+              <th>Item</th>
+              <th>Current Price</th>
+              <th>Quantity</th>
+              <th>Unit Purchase Price</th>
+              <th>Subtotal Price</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @order.line_items.each do |item| %>
+              <tr>
+              	<% @product = Product.find(Variant.where(id: item.variant).pluck(:product_id)) %>
+                <td style="color:#1e98b2;"><%= link_to item.variant.SKU, edit_admin_product_variant_path(@product, item.variant) %></td>
+                <td><%= number_to_currency(item.variant.price, unit:"RM") %></td>
+                <td><%= item.quantity %>&times;</td>
+                <td><%= number_to_currency(item.final_price, unit:"RM")  %></td>
+                <td><%= number_to_currency(item.total_final_price, unit:"RM") %></td>
+        	    </tr>
+        	  <% end %>
+
+              <tr class="total_line">
+           			<td colspan="4" style="text-align: left;">Total</td>
+          			<td class="total_cell"><%= number_to_currency(@order.total_price_new, unit: "RM") %></td>
+          		</tr>
+              <tr class="total_line">
+                <td colspan="4" style="text-align: left;">Delivery <span style="font-style: italic;">(via <%= @order.pay_type %>)-<%= @order.states %></span></td>
+                <td class="total_cell"><%= number_to_currency(@order.delivery_cost, unit: "RM") %></td>
+              </tr>
+              <tr class="total_line">
+                <td colspan="4" style="text-align: left;">Grand Total</td>
+                <td class="total_cell"><%= number_to_currency(@order.total_price, unit: "RM") %></td>
+              </tr>
+          </tbody>
+        </table>
+		  </div>
+
+      <div class="col-md-6 order_status">
+        <p style="font-size: 24px; border-bottom: 2px solid #dde2e1; width: 100%;"> ORDER STATUS </p>
+
+         <div style="position: relative; overflow: hidden; margin-top: 20px;">
+        <%= form_for([:admin, @order], method: :patch) do |f| %>
+
+            <%= f.label :payment_remarks, "Payment Remarks" %>
+      		  <%= f.text_area :payment_remarks, :rows => 2, class: 'form-control' %>
+
+            <%= f.submit "Update Payment Remarks", class: "btn btn-primary" %>
+        <% end %>
+
+
+        <div class="boot">
+        <%= form_for([:admin, @product, @order], remote: true, url: admin_order_update_order_payment_status_path,  :html => {:class => "editing_payment_status"}, method: :post) do |f| %>
+          <div class="field">
+        	  <%= f.hidden_field :order_id, :value => @order.id, :id => "order_id" %>
+            <%= f.check_box :payment_status_cd, class: "order_payment_#{@order.payment_status}" %> 
+          </div>
+          <%= f.submit "Update Order Payment" %>
+        <% end %>
+        </div>
+        </div>
+
+
+        <div style="position: relative; overflow: hidden; margin-top: 30px; border-top: 1px solid #dde2e1;">
+        <%= form_for([:admin, @order], method: :patch) do |f| %>
+
+          <%= f.label :shipment_remarks, "Shipping Remarks" %>
+        	<%= f.text_area :shipment_remarks, :rows => 2, class: 'form-control' %>
+
+          <%= f.submit "Update Shipping Remarks", class: "btn btn-primary" %>
+        <% end %>
+
+
+
+         <div class="boot">
+         <%= form_for([:admin, @product, @order], remote: true, url: admin_order_update_order_shipment_status_path,  :html => {:class => "editing_shipment_status"}, method: :post) do |f| %>
+          <div class="field">
+          	  <%= f.hidden_field :order_id, :value => @order.id, :id => "order_id" %>
+              <%= f.check_box :shipment_status_cd, class: "order_shipment_#{@order.shipment_status}" %> 
+          </div>
+            <%= f.submit "Update Order Shipment"%>
+        <% end %>
+        </div>
+        </div>
+
+
+        <div class="order_decision" style=" margin-top: 20px;">
+        <% if @order.order_status_cd == 1 %>
+
+  			  <%= form_for [:admin, @order] do |t| %>
+  	     		<%= t.hidden_field :order_status_cd, :value=> 2 %>
+  	     		<%= t.submit "Cancel Order", class: "btn btn-danger" %>
+  	   		<% end %>
+
+   		  <% elsif @order.order_status_cd == 2 %>
+
+     			<p></p>
+     	
+     	  <% elsif @order.order_status_cd == 0 %>
+
+     			<%= form_for [:admin, @order] do |t| %>
+       			<%= t.hidden_field :order_status_cd, :value=> 1 %>
+       			<%= t.submit "Approve Order", class: "btn btn-success" %>
+     			<% end %>
+
+          <div style=" margin-top: 20px;">
+     			<%= form_for [:admin, @order] do |t| %>
+       			<%= t.hidden_field :order_status_cd, :value=> 2 %>
+       			<%= t.submit "Cancel Order", class: "btn btn-danger" %>
+     			<% end %>
+          </div>
+   			
+   		<% end %>
+      </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title><%= full_title(yield(:title)) %></title>
+				<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+				<meta name="turbolinks-cache-control" content="no-cache">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+				<%= csrf_meta_tags %>
+				<%= render 'layouts/shim' %>
+		</head>
+
+		<div class="site-container">
+ 			<div class="site-pusher">
+
+				<body>
+				    <% if current_page?(root_path) %>
+	    				<%= render 'layouts/home_header' %>
+					<% else %>
+			    		<%= render 'layouts/header' %>
+					<% end %>
+
+	    			<div class="site-content">
+	      				<div class="flash_message">
+							<%= render 'shared/flash' %>
+						</div>
+							<%= yield %>	
+							<%= render 'layouts/footer' %>
+					</div> <!-- END site-content -->
+		    		
+		    		<div class="site-cache" id="site-cache"></div>
+		 			
+		 			</div> <!-- END header-->
+				</body>
+			</div><!-- END site-pusher -->
+
+		</div> <!-- END site-container -->				
+	</html>
+
+

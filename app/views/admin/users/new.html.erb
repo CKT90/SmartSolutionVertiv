@@ -1,0 +1,33 @@
+<% provide(:title, 'New User') %>
+<div class="pass_reset">
+<h1>New User Creation</h1>
+<br>
+<br>
+	<div class="row">
+		<div class="col-lg-4 col-lg-offset-4 col-sm-12">	
+			<%= form_for [:admin, @user] do |f| %>
+			<%= render 'shared/error_messages', :target => @user %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control' %>
+
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %>
+
+			<%= f.label :company %>
+			<%= f.text_field :company, class: 'form-control' %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password, class: 'form-control' %>
+
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation, class: 'form-control' %>
+
+			<%= f.label :status %>
+			<%= f.select :status, options_for_select(["none", "Platinum NSP", "Gold NSP", "Silver NSP"]), {:class => 'select2'} %>
+
+			<%= f.submit "Generate User", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

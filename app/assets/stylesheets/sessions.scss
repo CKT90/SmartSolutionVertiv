@@ -1,0 +1,45 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_here {
+	padding-bottom:150px;
+	padding-top: 100px;
+	h1 {
+		text-align: center;
+	}
+}
+
+p.loginvertiv {
+	color: #ff8c00;
+	font-weight: bold;
+	font-size: 5em;
+	text-align: center;
+	margin-bottom: 0;
+	line-height: 80px;
+}
+
+p.loginsmartrow {
+	color: #999999;
+	font-weight: bold;
+	font-size: 3em;
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 1025px) {
+
+	.login_here {
+		width: 70%;
+		padding-top: 150px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+	.login_here {
+		width: 100%;
+		padding-top: 70px;
+		padding-bottom: 100px;
+	}
+}

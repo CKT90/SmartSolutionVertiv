@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^1.4.2",
+    "@material-ui/icons": "^2.0.0",
+    "@rails/webpacker": "^4.0.7",
+    "axios": "^0.18.1",
+    "babel-preset-react": "^6.24.1",
+    "core-js": "^3.4.1",
+    "git": "^0.1.5",
+    "gulp-sass": "^3.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react_ujs": "^2.4.4",
+    "redis": "^2.8.0",
+    "redis-server": "^1.2.2",
+    "sudo": "^1.0.3",
+    "vue": "^2.6.10",
+    "vue-turbolinks": "^2.0.4"
+  },
+  "devDependencies": {
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "license": "BSD-3-Clause"
+}

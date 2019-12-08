@@ -1,0 +1,75 @@
+
+<h1>All Orders</h1>
+
+
+  <%= search_form_for [:admin, @search] do |f| %>
+  <div class="search_order_content">
+  <div class="field col-lg-3">
+  <%= f.label :payment_status, "Payment Status" %>
+  <%= f.select(:payment_status_cd_eq, [ ['pending', '0'], ['paid', '1'] ], {:include_blank => true}, {:class=> 'admin_normal_select'}) %>
+  </div>
+
+  <div class="field col-lg-3">
+  <%= f.label :shipment_status, "Shipment Status" %>
+  <%= f.select(:shipment_status_cd_eq, [ ['pending', '0'], ['shipped', '1'], ['canceled','2'] ], {:include_blank => true}, {:class=> 'admin_normal_select'}) %>
+  </div>
+
+  <div class="field col-lg-3">
+  <%= f.label :order_status, "Order Status" %>
+  <%= f.select(:order_status_cd_eq, [ ['pending', '0'], ['Approved', '1'], ['canceled','2'] ], {:include_blank => true}, {:class=> 'admin_normal_select'}) %>
+  </div>
+
+
+  <div class="field col-lg-3">
+    <div class="col-lg-12"><%= button_to "Reset Filter", admin_orders_path, :method => :get %></div>
+    <div class="col-lg-12"><%= f.submit "Search" %></div>
+    <% end %>
+  </div>
+  </div>
+
+
+
+<table class="table order_table">
+  <thead class="thead-inverse">
+    <tr>
+      <th style="width:15%;">Order No.</th>
+      <th style="width:15%; text-decoration: underline;"><%= sort_link @search, :created_at, "Date" %></th>
+      <th style="width:15%; text-decoration: underline;"><%= sort_link @search, :total_price, "Total" %></th>
+      <th style="width:15%;">Payment Method</th>
+      <th style="width:10%;">Payment Status</th>
+      <th style="width:10%;">Shipment Status</th>
+      <th style="width:10%;">Order Status</th>
+      <th style="width:10%;">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @orders.each do |order| %>
+      <tr>
+        <td style="color: #1d454f; font-weight: bold;"><%= link_to order.number, admin_order_manage_order_path(order) %></td>
+        <td><%= order.created_at.strftime('%a, %d %b %Y %H:%M:%S') %></td>
+        <td><%= number_to_currency(order.total_price, unit: "RM") %></td>
+        <td><%=order.pay_type%></td>
+        <td><span><%=order.payment_status%></span></td>
+        <td><span><%=order.shipment_status%></span></td>
+        <td><span><%=order.order_status%></span></td>
+        <td class="glyph" style="width: 10%;">
+        <%= link_to [:admin, :order, :manage, order] do %>
+          <i class="btn btn-success glyphicon glyphicon-book"></i>
+        <% end %>
+
+        <%= link_to admin_order_remove_path(order), :method => :put, data: { confirm: 'Are you sure?' } do %>
+          <i class="btn btn-danger glyphicon glyphicon-remove"></i>
+        <% end %>
+        </td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+<br>
+
+
+
+<%= link_to 'New Order', admin_orders_path, class: 'btn btn-success new_order_admin' %>
+

@@ -1,0 +1,45 @@
+
+
+<div class="container" style="padding-top: 30px; padding-bottom: 100px;">
+
+  <div class="identity">
+    <p> Hi, <%= current_user.name %> </p>
+    <%= current_user.company %><br>
+    <%= current_user.email %>
+    <% if current_user.status == "Gold NSP" %>
+      <p> You have Gold Access!  <span style="color: blue;">Perks: (5% discount)</span></p>
+    <% elsif current_user.status == "Silver NSP" %>
+      <p> You have Silver Access!  <span style="color: blue;">Perks: (7% discount)</span></p>
+    <% elsif current_user.status == "Platinum NSP" %>
+      <p> You have Platinum Access!  <span style="color: blue;">Perks: (10% discount)</span></p>
+    <% else current_user.status = "none" %>
+    <% end %>
+</div>
+
+
+<table class="table order_table" style="font-size: 15px;">
+  <thead class="thead-inverse">
+    <tr>
+      <th style="width: 10%; text-decoration: underline;"><%= sort_link @search, :created_at, "Date Created" %></th>
+      <th style="width:35%;">Project</th>
+      <th style="width:15%;">Rack Quantity</th>
+      <th style="width:35%;">Proposal Link</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @configs.each do |config| %>
+      <tr>
+        <td><%= config.created_at.strftime('%a, %d %b %Y %H:%M:%S') %></td>
+        <td><%= config.project %></td>
+        <td><%= config.rack_q %></td>
+        <td><%= link_to config.number, config_path(config), style: "color: #ff8c00; text-decoration: underline; " %></td>
+        <td></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+<br>
+
+</div>

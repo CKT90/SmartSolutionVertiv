@@ -1,0 +1,908 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: "roboto";
+  src: url(/assets/Roboto-Thin.ttf) format("truetype");
+}
+
+.non_redundancy,
+.redundancy {
+	border-top: 5px solid #383838;
+	margin-top: 50px;
+	overflow: auto;
+
+	h1 {
+		font-weight: bold;
+	}
+
+	img {
+		float: right;
+	}
+}
+
+.config_result {
+	font-family: roboto;
+	font-size: 2.5em;
+	padding-bottom: 60px;
+
+	.second_config {
+		margin-top: 50px;
+		border-top: 1px solid #999;
+	}
+
+	.config_img img {
+		max-height: 90%;
+    	max-width: 90%;
+    	padding-top: 35px;
+	}
+
+	.config_des {
+		padding-top:  45px;
+
+
+		table, td{
+			border-top: 1px solid #999;
+		}
+
+		table, th {
+			border-bottom: 1px solid #999;
+		}
+
+		h4 {
+			margin: 0;
+			font-style: italic;
+
+
+		}
+	}
+
+
+	span.nihon {
+		font-weight: bolder;
+		padding: 10px 10px 10px 10px !important;
+		color: #fff;
+		background-color: #f5b041;
+		border-radius: 10px;
+	}
+
+	p {
+		margin-top: 30px;
+	}
+
+
+
+	.ghost-button-transition-result {
+	  font-size: 1em;
+	  display: inline-block;
+	  padding: 10px 15px 10px 15px;
+	  background-color: transparent;
+	  line-height:35px;
+	  font-family: arial;
+	  font-weight: bold;
+	  color: #ff8c00;
+	  text-align: center;
+	  border: 5px solid #ff8c00;
+	  outline: none;
+	  color: #ff8c00;
+	  text-decoration: none;
+	  transition: background-color 0.2s ease-out,
+	              color 0.2s ease-out;
+
+	  &:hover {
+	    background-color: #ff8c00;
+	    text-decoration: none;
+	    color: #fff !important;
+	    transition: background-color 0.3s ease-in,
+	                color 0.3s ease-in;
+	  }
+	}
+
+  a.ghost-button-transition-result:focus { /* Weird */
+    color: inherit ;
+    text-decoration: none;
+  }
+}
+
+
+.monitor {
+	background-image: url(image_path('monitor.jpg'));
+    background-size: cover;
+    background-position: center top;
+    height: 1000px;
+    text-align: center;
+    font-family: roboto;
+    color: #999999;
+    padding-top: 50px;
+    font-size: 1.2em;
+
+    span.monitorp {
+    	color: #ff8c00;
+    	border: 1px solid #ff8c00;
+    	padding: 5px 10px 5px 10px;
+    	width: 100%;
+    }
+}
+
+.casestudy {
+	background-image: url(image_path('casestudy.jpg'));
+    background-size: cover;
+    background-position: center center;
+    height: 1000px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    span.cslink {
+    	color: #fff;
+    	background-color: #ff8c00;
+    	padding: 5px 10px 5px 10px;
+    }
+
+    img.csimg {
+    	padding-top: 60px;
+    	height: 425px;
+    }
+
+
+    h1 {
+    	background-color: #ff8c00;
+    	padding-top: 5px;
+    	padding-bottom: 5px;
+    	padding-left: 10px;
+    	font-weight: bold;
+    	color: #fff;
+    }
+
+    .cscontent {
+    	background-color:rgba(255,255,255, 0.4);
+    	h2 {
+    		font-weight: bold;
+    		text-decoration: underline;
+    	}
+    }
+}
+
+img.allin {
+	width: 100%;
+}
+
+.help_page {
+	text-align: center;
+	padding-bottom:100px;
+	padding-top: 30px;
+	.help_submit_button {
+		color: #000;
+		border: 2px solid #000;
+		background-color: transparent;
+		max-width: inherit;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-decoration: none;
+  		transition: background-color 0.2s ease-out,
+              			color 0.2s ease-out;
+
+		&:hover,
+		&:active {
+		  background-color: #000;
+		  color: #fff;
+		  transition: background-color 0.3s ease-in,
+		              color 0.3s ease-in;
+		}
+	}
+}
+
+.product_exp {
+	background-image: url(image_path('product_exp.jpg'));
+    background-size: cover;
+    background-position: center 90%;
+    width: 100%;
+	padding-top: 70px;
+	padding-bottom: 70px;
+
+	.exp_text {
+		padding-left: 100px;
+
+	}
+
+}
+
+.d1 {
+	position: absolute;
+	top: 150px;
+	text-align: left;
+	right: 0px;
+	margin-left: 320px;
+
+	.des11 {
+		font-size: 70px;
+		line-height: 80px;
+		color: #ff8c00;
+
+	}
+
+	.des12 {
+		margin-left: 10px;
+		display: inline-block;
+		width: 70%;
+
+	}
+
+	.des13 a{
+		margin-left: 10px;
+		margin-top: 15px;
+		font-size: 20px;
+
+	}
+}
+
+.alert {
+	width: 80%;
+	align-self: center;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.about {
+	padding-top: 50px;
+	text-align: left;
+
+	.aboutA {
+		.text1abt1 {
+			padding-left: 30px;
+		}
+
+		.text2abt1 {
+			.image_abt1{
+				padding-left: 30px;
+				width: 550px;
+				height: 300px;
+			}
+		}
+	}
+
+	.aboutB {
+		background-color: #f3f2f2;
+
+		.text1abt2 {
+			padding-top: 50px;
+			padding-bottom: 50px;
+
+			.image_abt2 {
+				margin-top: 30px;
+				height: 270px;
+				width: 480px;
+			}
+		}
+
+		.text2abt2 {
+			padding-left: 30px;
+		}
+	}
+
+	.aboutC {
+		.text1abt3 {
+			padding-left: 30px;
+		}
+
+		.text2abt3 {
+			.image_abt3{
+				padding-left: 60px;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.carousel-inner{
+  width:100%;
+  height: 100%;
+
+  	.item {
+	  	background-image: url(image_path('center1.jpg'));
+	    background-size: cover;
+	    background-position: center top;
+	    width: 100%;
+    	height: 700px;
+  	}
+
+  	.item_2 {
+	  	background-image: url(image_path('center2.jpg'));
+  	}
+
+  	.item_3 {
+	  	background-image: url(image_path('center3.jpg'));
+  	}
+
+
+}
+
+
+.home_link{
+	padding-top: 40px;
+	padding-bottom: 30px;
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+  	overflow: hidden;
+  	margin: 0px;
+
+	.fblink {
+		background-image: url(image_path('fbhome.jpg'));
+	}
+
+	.iglink {
+		background-image: url(image_path('ighome.jpg'));
+	}
+
+	.taslink {
+		background-image: url(image_path('tashome.jpg'));
+	}
+
+	.s6link {
+		background-image: url(image_path('s6home.jpg'));
+	}
+
+	.home_button {
+			float:left;
+			position: relative;
+		    width: 100%;
+		    height: 280px;
+		    background-size:cover;
+		    background-position: center center;
+			transition: all .5s;
+			text-align: center;
+			color: #f5ecda;
+			font-weight: bold;
+
+
+
+		span {
+			top: 50%;
+			position: relative;
+			padding: 5px 10px 5px 10px;
+			border: #f5ecda 2px solid;
+			transition: all .8s;
+			color: #fff;
+		}
+
+		&:hover {
+			text-decoration: none;	
+			font-weight: bold;
+			transition: all 0.8s;
+			opacity: 0.8;
+  
+			span.blue { 
+				transition: all 0.8s;
+				padding: 5px 10px 5px 10px;
+				border: #3b5998 2px solid;
+				background-color: #3b5998;
+			}	
+
+			span.red { 
+				transition: all 0.8s;
+				padding: 5px 10px 5px 10px;
+				border: #f31b53 2px solid;
+				background-color: #f31b53;
+			}	
+
+			span.orange { 
+				transition: all 0.8s;
+				padding: 5px 10px 5px 10px;
+				border: #fdbb2e 2px solid;
+				background-color: #fdbb2e;
+			}	
+
+			span.purple { 
+				transition: all 0.8s;
+				padding: 5px 10px 5px 10px;
+				border: #bd32cd 2px solid;
+				background-color: #bd32cd;
+			}	
+		}
+  	}
+}
+
+
+.home  {
+	padding-bottom:0px;
+}
+
+.box {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	max-width: 30%;
+	margin-left: 20px;
+}
+
+.show_image img {
+	max-width: 100%;
+	margin-bottom: 30px;
+	position: relative;
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 1150px) {
+	.config_result {
+
+		.config_img img {
+			max-height: 100%;
+	    	max-width: 100%;
+	    	padding-top: 35px;
+		}
+	}
+
+	.casestudy {
+		background-image: url(image_path('casestudy.jpg'));
+	    background-size: cover;
+	    background-position: center center;
+	    height: 1600px;
+	    padding-left: 100px;
+	    padding-right: 100px;
+	    text-align: center;
+
+	    img.csimg {
+	    	padding-top: 0px;
+	    	height: 470px;
+	    }
+
+
+	    h1 {
+	    	font-weight: bold;
+	    	color: #fff;
+	    	background-color: #ff8c00;
+	    	padding-top: 5px;
+	    	padding-bottom: 5px;
+	    }
+
+	    .cscontent {
+	    	background-color:rgba(255,255,255, 0.4);
+	    	h2 {
+	    		font-weight: bold;
+	    		text-decoration: underline;
+	    	}
+	    }
+	}
+
+	.product_exp {
+	    background-position: center 90%;
+	    height: 600px;
+		padding-top: 70px;
+		padding-bottom: 70px;
+
+
+		.exp_text {
+			padding-left: 20px;
+			color: #000;
+		}
+	}
+
+	.help_page {
+		padding: 50px 120px 200px 120px;
+	}
+
+
+	.new_release {
+		padding: 30px 30px 30px 30px;
+	}
+	.home_pages_link{
+		.home_fb {
+			background-position: center center;
+			background-size: 400px 300px;
+	  	}
+
+	  	.home_insta {
+			background-position: center center;
+			background-size: 400px 300px;
+	  	}
+	}
+
+
+	.about {
+		.aboutA {
+			.text1abt1 {
+				padding-left: 30px;
+			}
+
+			.text2abt1 {
+				.image_abt1{
+					padding-left: 30px;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		.aboutB {
+			background-color: #f3f2f2;
+
+			.text1abt2 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+				padding-right: 40px;
+
+				.image_abt2 {
+					margin-top: 30px;
+					height: 100%;
+					width: 100%;
+				}
+			}
+
+			.text2abt2 {
+				padding-left: 30;
+			}
+		}
+
+		.aboutC {
+			.text1abt3 {
+				padding-left: 30px;
+			}
+
+			.text2abt3 {
+				.image_abt3{
+					padding-top: 80px;
+					padding-left: 60px;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+
+
+	.carousel-inner{
+	  width:100%;
+	  height: 100%;
+
+	  	.item {
+		    background-size: cover;
+		    background-position: left 80%;
+		    width: 100%;
+	    	height: 550px;
+	 
+	  	}
+	}
+
+
+	.home_pages_link{
+	  overflow: hidden;
+
+		.home_fb {
+			background-position: center center;
+			background-size: 500px 350px;
+		    width: 50%;
+		    height:200px;
+
+	  	}
+
+	  	.home_insta {
+			background-position: center center;
+			background-size: 500px 350px;	  	    
+			width: 50%;
+			height:200px;
+	  	}
+
+
+	}
+
+	.box {
+		max-width: 31%;
+		margin-left: 10px;
+	}
+
+
+	.image_switch{
+		position:relative;
+		top:0;
+		margin-top:40px;
+		.carousel-inner{
+  			width:100%;
+  			height: 100%;
+		}
+
+	}
+
+
+	.d1 {
+		position: relative;
+		top: 100px;
+		text-align: left;
+		left: 120px;
+
+		.des11 {
+			font-size: 45px;
+			line-height: 50px;
+
+		}
+
+		.des12 {
+    		background-color: rgba(145, 145, 145, 0.3);	
+    		padding: 10px 5px 10px 5px;	
+    		margin-left: 5px;
+
+		}
+
+		.des13 a{
+			margin-top: 8px;
+			font-size: 20px;
+			margin-left: 5px;
+
+		}
+	}
+
+}
+
+
+
+.footer {
+	position: relative;
+	background-color: transparent;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: 20px 20px 0px 20px;
+	padding: 10px 20px 20px 20px;
+	
+	color: #141414;
+	border-top: #141414 1px solid;
+	overflow:hidden;
+	a {
+		&:hover {
+			color: #222;
+		}
+	}
+
+	.footer_left {
+		float: left;
+		width: 60%;
+	}
+
+	.footer_right {
+		float: right;
+		width: 40%;
+		text-align: right;
+		span {
+			padding-right: 15px;
+		}
+		a {
+			padding-right: 15px;
+			&:focus,
+			&:hover {
+				color: #90c5c7;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	.monitor {
+		background-image: url(image_path('monitor.jpg'));
+	    background-size: cover;
+	    background-position: center top;
+	    height: 1000px;
+	    text-align: center;
+	    font-family: roboto;
+	    color: #999999;
+	    padding-top: 50px;
+	    font-size: 1em;
+	    padding-left: 40px;
+	    padding-right: 40px;
+
+	    span.monitorp {
+	    	color: #ff8c00;
+	    	border: 0px;
+	    	padding: 5px 10px 5px 10px;
+	    	width: 100%;
+	    }
+	}
+
+	.casestudy {
+		background-image: url(image_path('casestudy.jpg'));
+	    background-size: cover;
+	    background-position: center center;
+	    height: 1400px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    text-align: center;
+
+	    img.csimg {
+	    	padding-top: 0px;
+	    	height: 240px;
+	    }
+
+
+	    h1 {
+	    	font-weight: bold;
+	    	color: #fff;
+	    	background-color: #ff8c00;
+	    	padding-top: 5px;
+	    	padding-bottom: 5px;
+	    }
+
+	    .cscontent {
+	    	background-color:rgba(255,255,255, 0.4);
+	    	h2 {
+	    		font-weight: bold;
+	    		text-decoration: underline;
+	    	}
+	    }
+	}
+
+
+	.product_exp {
+	    background-position: 90% 95%;
+	    height: 440px;
+		padding-top: 30px;
+		padding-bottom: 70px;
+
+		.exp_text {
+			padding-left: 0px;
+		}
+	}
+
+
+	.box {
+		max-width: 100%;
+		margin-left: 0px;
+	}
+
+	.help_page {
+		padding: 10px 20px 15px 20px;
+	}
+
+	.about {
+		padding-top: 20px;
+		.aboutA {
+			.text1abt1 {
+				padding-left: 30px;
+			}
+
+			.text2abt1 {
+				.image_abt1{
+					padding-left: 0px;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		.aboutB {
+			background-color: #f3f2f2;
+
+			.text1abt2 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+				padding-right: 40px;
+
+				.image_abt2 {
+					margin-top: 10px;
+					height: 100%;
+					width: 100%;
+				}
+			}
+
+			.text2abt2 {
+				padding-left: 30;
+			}
+		}
+
+		.aboutC {
+			.text1abt3 {
+				padding-left: 30px;
+			}
+
+			.text2abt3 {
+				.image_abt3{
+					padding-top: 0px;
+					padding-left: 0px;
+					text-align: center;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.home_pages_link{
+	  overflow: hidden;
+
+		.home_fb {
+			background-position: center center;
+			background-size: 400px 300px;
+		    width: 100%;
+		    height:200px;
+
+	  	}
+
+	  	.home_insta {
+			background-position: center center;
+			background-size: 400px 300px;	  	    
+			width: 100%;
+			height:200px;
+	  	}
+
+
+	}
+
+	.footer {
+		font-size:12px !important;
+		padding: 10px !important;
+		.footer_left  {
+			width: 100%;
+		}
+		.footer_right {
+			width:0%;
+			span {
+				padding-right: 5px;
+				margin-bottom: 10px;
+			}
+			a {
+				padding-right: 5px;
+				&:focus,
+				&:hover {
+					color: #90c5c7;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+
+.carousel-inner{
+
+  	.item {
+	    background-position: 7% 20%;
+	    height: 530px;
+	  	}
+	}
+
+
+	.d1 {
+		top: 0;
+		text-align: left;
+		width: 100%;
+		margin: auto 15px auto 15px;
+		left: 0;
+		right: 0;
+
+
+		.des11 {
+			font-size: 27px;
+			line-height: 35px;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		.des12 {
+			margin-left: 0px;
+			font-size: 13px;
+			width: auto;
+			max-width: 300px;
+			background-color: transparent;
+
+		}
+
+		.des13 a{
+			position: absolute;
+			font-size: 15px;
+			margin-left: 5px;
+			top: 5px;
+			right: 50px;
+
+		}
+	}
+
+
+	.lowerabit {
+		top: 350px !important;
+	}
+}
+
