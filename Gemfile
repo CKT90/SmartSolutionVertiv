@@ -46,7 +46,7 @@ gem "table_print"
 gem "sassc"
 gem 'therubyracer', :platform => :ruby
 gem 'redis', '~> 3.3'
-gem 'puma', '~> 3.4'
+gem 'puma', '~> 4.3'
 gem 'sidekiq', '~> 5.0', '>= 5.0.5'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'rack-mini-profiler', require: false
